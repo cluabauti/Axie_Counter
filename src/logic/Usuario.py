@@ -5,7 +5,8 @@ class Usuario:
     #Variables de instancia
     
     #Constructor
-    def __init__ (self, elo: ELO, axies, slp: int = 0, copas: int = 0):
+    def __init__ (self, nombre : str ,elo: ELO, axies, slp: int = 0, copas: int = 0):
+        self._nombre = nombre
         self._slp = slp
         self._copas = copas
         self._elo = elo
@@ -20,6 +21,14 @@ class Usuario:
     def quitarSlp (self, cant : int):
         """Quita la cantidad de slp pasada por parametro"""
         self._slp += cant
+
+    @property
+    def nombre(self):
+        return self._nombre
+    
+    @nombre.setter
+    def nombre (self, nombre):
+        self._nombre = nombre
 
     #def calcularElo (int copas)
 

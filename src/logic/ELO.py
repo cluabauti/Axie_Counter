@@ -9,5 +9,10 @@ class ELO:
         return self._elo
 
     @elo.setter
-    def elo (self, elo):
+    def elo (self, elo: tuple = (1100, 1299)):
         self._elo = elo
+
+    def getSlpSegunElo (self) -> int:
+        """Devuelve la cantidad de slp que deberia ganar segun el ELO del usuario"""
+        return self.ELOS[self._elo] 
+    
